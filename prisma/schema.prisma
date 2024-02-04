@@ -18,40 +18,32 @@ model Product {
   category    String               @db.VarChar(50)
   image       String               @db.VarChar(200)
   orderItems  PurchaseOrderItems[]
-
-  @@map("product")
 }
 
 model User {
-  id         Int             @id @default(autoincrement())
-  email      String          @unique @db.VarChar(100)
-  username   String          @db.VarChar(50)
-  password   String          @db.VarChar(50)
-  first_name String          @db.VarChar(50)
-  last_name  String          @db.VarChar(50)
-  orders     PurchaseOrder[]
-
-  @@map("user")
+  id        Int             @id @default(autoincrement())
+  email     String          @unique @db.VarChar(100)
+  username  String          @db.VarChar(50)
+  password  String          @db.VarChar(50)
+  firstName String          @db.VarChar(50)
+  lastName  String          @db.VarChar(50)
+  orders    PurchaseOrder[]
 }
 
 model PurchaseOrder {
   id     Int                  @id @default(autoincrement())
   user   User                 @relation(fields: [userId], references: [id])
   userId Int
-  date   DateTime
+  date   DateTime             @default(now())
   items  PurchaseOrderItems[]
-
-  @@map("purchase_order")
 }
 
 model PurchaseOrderItems {
-  id                Int           @id @default(autoincrement())
-  product_id        Product       @relation(fields: [products], references: [id])
-  products          Int
-  purchase_order_id PurchaseOrder @relation(fields: [purchase_orders], references: [id])
-  purchase_orders   Int
-  quantity          Int
-  price             Decimal
-
-  @@map("purchase_order_items")
+  id              Int           @id @default(autoincrement())
+  products        Product       @relation(fields: [productId], references: [id])
+  productId       Int
+  purchaseOrders  PurchaseOrder @relation(fields: [purchaseOrderId], references: [id])
+  purchaseOrderId Int
+  quantity        Int
+  price           Decimal
 }
