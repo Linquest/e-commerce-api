@@ -1,11 +1,12 @@
 # E-Commerce API
 
 Este projeto é uma API de e-commerce para venda de camisetas, canecas e adesivos. Este projeto segue a arquitetura MVC (Model-View-Controller).
-###Model: As entidades do seu projeto (User, Product, PurchaseOrder, PurchaseOrderItems) representam o Model. Eles contêm a lógica para acessar os dados do banco de dados.
 
-###View: Em uma API RESTful como a sua, a “view” seria a representação dos dados enviados ao cliente. No seu caso, são as respostas JSON que sua API envia.
+Model: As entidades do seu projeto (User, Product, PurchaseOrder, PurchaseOrderItems) representam o Model. Eles contêm a lógica para acessar os dados do banco de dados.
 
-###Controller: Os controllers (UserController, ProductController, PurchaseOrderController, PurchaseOrderItemsController) contêm a lógica de negócios. Eles determinam o que acontece quando um cliente faz uma solicitação específica para sua API.
+View: Em uma API RESTful como a sua, a “view” seria a representação dos dados enviados ao cliente. No seu caso, são as respostas JSON que sua API envia.
+
+Controller: Os controllers (UserController, ProductController, PurchaseOrderController, PurchaseOrderItemsController) contêm a lógica de negócios. Eles determinam o que acontece quando um cliente faz uma solicitação específica para sua API.
 
 ## Funcionalidades
 
