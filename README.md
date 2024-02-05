@@ -20,6 +20,15 @@ Este projeto é uma API de e-commerce para venda de camisetas, canecas e adesivo
 
 ## Instalação
 
+### Opção 1: Usando Docker
+
+1. Clone este repositório
+2. Instale o Docker e o Docker Compose
+3. Crie um arquivo `.env` na raiz do projeto e preencha-o com as informações do seu banco de dados (veja o arquivo `.env.example` para um exemplo)
+4.Para construir e iniciar os contêineres, você pode usar o comando `docker-compose up --build`.
+5. Execute `docker-compose up` para iniciar os contêineres
+
+### Opção 2: Manualmente
 1. Clone este repositório
 2. Instale as dependências com:
 `npm i typescript ts-node-dev`
